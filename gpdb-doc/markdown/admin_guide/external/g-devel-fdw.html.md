@@ -6,7 +6,7 @@ This chapter outlines how to write a new foreign-data wrapper.
 
 All operations on a foreign table are handled through its foreign-data wrapper \(FDW\), a library that consists of a set of functions that the core Greenplum Database server calls. The foreign-data wrapper is responsible for fetching data from the remote data store and returning it to the Greenplum Database executor. If updating foreign-data is supported, the wrapper must handle that, too.
 
-The foreign-data wrappers included in the Greenplum Database open source github repository are good references when trying to write your own. You may want to examine the source code for the [file\_fdw](https://github.com/greenplum-db/gpdb/tree/main/contrib/file_fdw) and [postgres\_fdw](https://github.com/greenplum-db/gpdb/tree/main/contrib/postgres_fdw) modules in the `contrib/` directory. The [CREATE FOREIGN DATA WRAPPER](../../ref_guide/sql_commands/CREATE_FOREIGN_DATA_WRAPPER.html) reference page also provides some useful details.
+The foreign-data wrappers included in the VMware Greenplum GitHub repository are good references when trying to write your own. You may want to examine the source code for the [file\_fdw](https://github.com/greenplum-db/gpdb/tree/main/contrib/file_fdw) and [postgres\_fdw](https://github.com/greenplum-db/gpdb/tree/main/contrib/postgres_fdw) modules in the `contrib/` directory. The [CREATE FOREIGN DATA WRAPPER](../../ref_guide/sql_commands/CREATE_FOREIGN_DATA_WRAPPER.html) reference page also provides some useful details.
 
 > **Note** The SQL standard specifies an interface for writing foreign-data wrappers. Greenplum Database does not implement that API, however, because the effort to accommodate it into Greenplum would be large, and the standard API hasn't yet gained wide adoption.
 
@@ -29,7 +29,7 @@ The Greenplum Database 7 foreign-data wrapper implementation has the following k
 
 ## <a id="includes"></a>Header Files 
 
-The Greenplum Database header files that you may use when you develop a foreign-data wrapper are located in the `gpdb/src/include/` directory \(when developing against the Greenplum Database open source github repository\), or installed in the `$GPHOME/include/postgresql/server/` directory \(when developing against a Greenplum installation\):
+The Greenplum Database header files that you may use when you develop a foreign-data wrapper are located in the `gpdb/src/include/` directory (when developing against the VMware Greenplum GitHub repository), or installed in the `$GPHOME/include/postgresql/server/` directory \(when developing against a Greenplum installation\):
 
 -   `foreign/fdwapi.h` - FDW API structures and callback function signatures
 -   `foreign/foreign.h` - foreign-data wrapper helper structs and functions
